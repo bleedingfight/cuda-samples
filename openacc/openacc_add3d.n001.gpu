@@ -1,0 +1,188 @@
+target datalayout = "e-p:64:64:64-i1:8:8-i8:8:8-i16:16:16-i32:32:32-i64:64:64-i128:128:128-f32:32:32-f64:64:64-v16:16:16-v32:32:32-v64:64:64-v128:128:128-n16:32:64"
+target triple = "nvptx64-nvidia-cuda"
+
+%struct.__fcomplex = type {float, float}
+%struct.__dcomplex = type {double, double}
+
+define  ptx_kernel void @_28code_openacc_openacc_add3d_c_main_16_gpu(i8* %lsym2__1, i8* %lsym3__1, i8* %lsym4__1) nounwind !dbg !14 {
+_BB_VB0:
+    %lsym24__1_0 = alloca i32
+    %lsym25__1_0 = alloca i64
+    %lsym26__1_0 = alloca i32
+    %lsym27__1_0 = alloca i32
+    %lsym35__1_0 = alloca i64
+    %lsym36__1_0 = alloca i64
+    %lsym37__1_0 = alloca i64
+    %lsym2__1_p0 = alloca i8*
+    store i8* %lsym2__1, i8** %lsym2__1_p0 
+    %lsym3__1_p0 = alloca i8*
+    store i8* %lsym3__1, i8** %lsym3__1_p0 
+    %lsym4__1_p0 = alloca i8*
+    store i8* %lsym4__1, i8** %lsym4__1_p0 
+    br label %_BB_1
+_BB_1:
+
+    br label %_BB_2
+_BB_2:
+    br label %_BB_3
+_BB_3:
+    br label %_BB_5
+_BB_5:
+    br label %_BB_9
+_BB_9:
+    br label %_BB_10
+_BB_10:
+
+    store i64 0, i64* %lsym35__1_0 , align 8
+    %li379 = call i32 @llvm.nvvm.read.ptx.sreg.ctaid.x( ), !dbg !15
+    %li390 = sext i32 %li379 to i64
+
+    %li381 = mul i64 %li390, 128
+    %li382 = call i32 @llvm.nvvm.read.ptx.sreg.tid.x( ), !dbg !15
+    %li392 = sext i32 %li382 to i64
+    %li297 = add i64 %li381, %li392
+    store i64 %li297, i64* %lsym36__1_0 , align 8
+
+    store i64 32768, i64* %lsym37__1_0 , align 8
+    br label %_BB_11
+_BB_11:
+    %li309 = load i64, i64* %lsym35__1_0
+    %li383 = call i32 @llvm.nvvm.read.ptx.sreg.ctaid.x( ), !dbg !15
+    %li394 = sext i32 %li383 to i64
+
+    %li385 = mul i64 %li394, 128
+    %li386 = call i32 @llvm.nvvm.read.ptx.sreg.tid.x( ), !dbg !15
+    %li396 = sext i32 %li386 to i64
+    %li279 = add i64 %li385, %li396
+    %li310 = load i64, i64* %lsym36__1_0
+    store i64 %li310, i64* %lsym25__1_0 , align 8, !dbg !23
+    %li282 = load i64, i64* %lsym25__1_0, !dbg !23
+
+    %li310_2 = load i64, i64* %lsym36__1_0, !dbg !23
+    %li42 = sdiv i64 %li310_2, 32, !dbg !23
+    %li43 = mul i64 %li42, 32, !dbg !23
+    %li329 = sub i64 %li309, %li43, !dbg !23
+    %li330 = add i64 %li279, %li329, !dbg !23
+    %li398 = trunc i64 %li330 to i32, !dbg !23
+    store i32 %li398, i32* %lsym24__1_0 , align 4, !dbg !23
+    %li47 = sdiv i64 %li42, 32, !dbg !23
+    %li399 = trunc i64 %li47 to i32, !dbg !23
+    store i32 %li399, i32* %lsym27__1_0 , align 4, !dbg !23
+    %li48 = mul i64 %li47, 32, !dbg !23
+    %li49 = sub i64 %li42, %li48, !dbg !23
+    %li400 = trunc i64 %li49 to i32, !dbg !23
+    store i32 %li400, i32* %lsym26__1_0 , align 4, !dbg !23
+
+    %li65_0 = icmp sge i64 %li282, 32768, !dbg !24
+    br i1 %li65_0, label %_BB_21, label %_BBFT_65, !dbg !24
+_BBFT_65:
+    br label %_BB_23, !dbg !24
+_BB_23:
+    %li66 = load i8*, i8** %lsym2__1_p0, !dbg !25
+    %li68 = load i32, i32* %lsym27__1_0, !dbg !25
+    %li69 = sext i32 %li68 to i64, !dbg !25
+
+    %li355 = mul i64 %li69, 32, !dbg !25
+    %li73 = load i32, i32* %lsym26__1_0, !dbg !25
+    %li74 = sext i32 %li73 to i64, !dbg !25
+    %li356 = add i64 %li355, %li74, !dbg !25
+    %li359 = mul i64 %li356, 32, !dbg !25
+    %li79 = load i32, i32* %lsym24__1_0, !dbg !25
+    %li80 = sext i32 %li79 to i64, !dbg !25
+    %li360 = add i64 %li359, %li80, !dbg !25
+
+    %li83 = mul i64 %li360, 4, !dbg !25
+    %li84 = getelementptr i8, i8* %li66, i64 %li83, !dbg !25
+    %li85_t0 = bitcast i8* %li84 to i32*, !dbg !25
+    %li85 = load i32, i32* %li85_t0, !dbg !25
+    %li86 = load i8*, i8** %lsym3__1_p0, !dbg !25
+    %li104 = getelementptr i8, i8* %li86, i64 %li83, !dbg !25
+    %li105_t0 = bitcast i8* %li104 to i32*, !dbg !25
+    %li105 = load i32, i32* %li105_t0, !dbg !25
+    %li106 = add i32 %li85, %li105, !dbg !25
+    %li107 = load i8*, i8** %lsym4__1_p0, !dbg !25
+    %li125 = getelementptr i8, i8* %li107, i64 %li83, !dbg !25
+    %li126_t0 = bitcast i8* %li125 to i32*, !dbg !25
+    store i32 %li106, i32* %li126_t0 , !dbg !25
+    br label %_BB_21, !dbg !25
+_BB_21:
+    %li387 = call i32 @llvm.nvvm.read.ptx.sreg.nctaid.x( ), !dbg !25
+    %li404 = sext i32 %li387 to i64, !dbg !25
+
+    %li293 = mul i64 %li404, 128, !dbg !25
+    %li294 = load i64, i64* %lsym35__1_0, !dbg !25
+    %li295 = add i64 %li294, %li293, !dbg !25
+    store i64 %li295, i64* %lsym35__1_0 , align 8, !dbg !25
+    %li300 = load i64, i64* %lsym36__1_0, !dbg !25
+    %li301 = add i64 %li300, %li293, !dbg !25
+    store i64 %li301, i64* %lsym36__1_0 , align 8, !dbg !25
+    %li306 = load i64, i64* %lsym37__1_0, !dbg !25
+    %li307 = sub i64 %li306, %li293, !dbg !25
+    store i64 %li307, i64* %lsym37__1_0 , align 8, !dbg !25
+    %li314 = load i64, i64* %lsym37__1_0, !dbg !25
+    %li161_0 = icmp sgt i64 %li314, 0, !dbg !25
+    br i1 %li161_0, label %_BB_11, label %_BBFT_161, !dbg !25
+_BBFT_161:
+    br label %_BB_28, !dbg !25
+_BB_28:
+    br label %_BB_13, !dbg !25
+_BB_13:
+    br label %_BB_27, !dbg !25
+_BB_27:
+    ret void , !dbg !25
+}
+
+; Begin User structs
+
+%struct.cudaFuncAttributes = type { i64, i64, i64, i32, i32, i32, i32, i32, i32, i32, i8, i8, i8, i8 }
+; End User structs
+
+; Begin module variables
+; Begin global objects variables
+; Begin gblvar defs variables
+
+
+; Begin used variables
+; End module variables
+
+
+declare i32 @llvm.nvvm.read.ptx.sreg.nctaid.x() nounwind
+declare i32 @llvm.nvvm.read.ptx.sreg.tid.x() nounwind
+declare i32 @llvm.nvvm.read.ptx.sreg.ctaid.x() nounwind
+
+; Named metadata
+!llvm.module.flags = !{ !1, !2 }
+!llvm.dbg.cu = !{ !10 }
+!nvvm.annotations = !{ !26, !27 }
+!nvvmir.version = !{ !28 }
+
+; Metadata
+!1 = !{ i32 2, !"Dwarf Version", i32 2 }
+!2 = !{ i32 2, !"Debug Info Version", i32 3 }
+!3 = !DIFile(filename: "code/openacc/openacc_add3d.c", directory: "/home/liushuai/cuda-book")
+; !4 = !DIFile(tag: DW_TAG_file_type, pair: !3)
+!4 = !{ i32 41, !3 }
+!5 = !{  }
+!6 = !{  }
+!7 = !{ !14 }
+!8 = !{  }
+!9 = !{  }
+!10 = distinct !DICompileUnit(file: !3, language: DW_LANG_C_plus_plus, producer: " NVC++ 24.7-0", enums: !5, retainedTypes: !6, globals: !8, emissionKind: DebugDirectivesOnly, imports: !9)
+!11 = !{ null, !22, !22, !22 }
+!12 = !DISubroutineType(types: !11)
+!13 = !{  }
+!14 = distinct !DISubprogram(file: !3, scope: !10, name: "_28code_openacc_openacc_add3d_c_main_16_gpu", linkageName: "_28code_openacc_openacc_add3d_c_main_16_gpu", line: 5, type: !12, isDefinition: true, unit: !10, scopeLine: 5)
+!15 = !DILocation(line: 5, column: 1, scope: !14)
+!16 = !DILexicalBlock(file: !3, scope: !14, line: 5, column: 1)
+!17 = !DILocation(line: 5, column: 1, scope: !16)
+!18 = !DISubrange(count: 32)
+!19 = !DIBasicType(tag: DW_TAG_base_type, name: "int", size: 32, align: 32, encoding: DW_ATE_signed)
+!20 = !{ !18, !18 }
+!21 = !DICompositeType(tag: DW_TAG_array_type, size: 32768, align: 32, baseType: !19, elements: !20)
+!22 = !DIDerivedType(tag: DW_TAG_pointer_type, size: 64, align: 64, baseType: !21, dwarfAddressSpace: 12)
+!23 = !DILocation(line: 14, column: 1, scope: !16)
+!24 = !DILocation(line: 16, column: 1, scope: !16)
+!25 = !DILocation(line: 17, column: 1, scope: !16)
+!26 = !{ void (i8*, i8*, i8*)* @_28code_openacc_openacc_add3d_c_main_16_gpu, !"kernel", i32 1 }
+!27 = !{ void (i8*, i8*, i8*)* @_28code_openacc_openacc_add3d_c_main_16_gpu, !"maxntidx", i32 128, !"maxntidy", i32 1, !"maxntidz", i32 1 }
+!28 = !{ i32 2, i32 0, i32 3, i32 0 }

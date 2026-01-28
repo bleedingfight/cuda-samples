@@ -1,0 +1,9 @@
+ncu --metrics smsp__sass_average_data_bytes_per_sector_mem_global_op_ld.pct /tmp/main 64 2
+ncu --metrics smsp__sass_average_data_bytes_per_sector_mem_global_op_ld.pct /tmp/main 64 4
+ncu --metrics smsp__sass_average_data_bytes_per_sector_mem_global_op_ld.pct /tmp/main 64 8
+ncu --metrics smsp__sass_average_data_bytes_per_sector_mem_global_op_ld.pct /tmp/main 128 2
+ncu --metrics smsp__sass_average_data_bytes_per_sector_mem_global_op_ld.pct /tmp/main 128 4
+ncu --metrics smsp__sass_average_data_bytes_per_sector_mem_global_op_ld.pct /tmp/main 128 8
+ncu --metrics smsp__sass_average_data_bytes_per_sector_mem_global_op_ld.pct /tmp/main 256 2
+ncu --metrics smsp__sass_average_data_bytes_per_sector_mem_global_op_ld.pct /tmp/main 256 4
+ncu --metrics smsp__sass_average_data_bytes_per_sector_mem_global_op_ld.pct /tmp/main 256 8

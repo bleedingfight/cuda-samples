@@ -1,0 +1,101 @@
+cmake-build-debug/ex8 String...
+Using Device 0:GeForce GTX 980M
+
+Matrix:(8,48)
+  0  1  2  3  4  5  6  7
+  8  9 10 11 12 13 14 15
+ 16 17 18 19 20 21 22 23
+ 24 25 26 27 28 29 30 31
+ 32 33 34 35 36 37 38 39
+ 40 41 42 43 44 45 46 47
+  0  031633  0  0  0  0  0
+  0  0  0  0  0  0  0  0
+  0  0  0  0  0  0  0  0
+  0  0  0  0  0  0  0  0
+  0  0  0  0  0  0  0  0
+  0  0  0  0  0  0  0  0
+  0  0  0  0  0  0  0  0
+  0  0  0  0  0  0  0  0
+  0  0  0  0  0  0  0  0
+  0  0  0  0  0  0  0  0
+3568  0528  0406632901-5915318518350936211700160613
+2019914866192023456115310976  0  0  0  0  0
+  0  0  0  0  0  0  0  0
+  0  0  0  0  0  0  0  0
+  0  0  0  0  0  0  0  0
+  0  0  0  0  0  0  0  0
+  0  0  0  0  0  0  0  0
+  0  0  0  0  0  0  0  0
+  0  0  0  0  0  0  0  0
+  0  0  0  0  0  0  0  0
+  0  0  0  0  0  0  0  0
+  0  0  0  0  0  0  0  0
+  0  0  0  0  0  0  0  0
+  0  0  0  0  0  0  0  0
+  0  0  0  0  0  0  0  0
+  0  0  0  0  0  0  0  0
+  0  0  0  04096  0528  0
+9541253221403514105116492248519199033421750295907191924745715312560  0
+  0  0  0  0  0  0  0  0
+  0  0  0  0  0  0  0  0
+  0  0  0  0  0  0  0  0
+  0  0  0  0  0  0  0  0
+  0  0  0  0  0  0  0  0
+  0  0  0  0  0  0  0  0
+  0  0  0  0  0  0  0  0
+  0  0  0  0  0  0  0  0
+  0  0  0  0  0  0  0  0
+  0  0  0  0  0  0  0  0
+  0  0  0  0  0  0  0  0
+  0  0  0  0  0  0  0  0
+  0  0  0  0  0  0  0  0
+  0  0  0  0  0  0  0  0
+
+thread_id (0,0),block_id (0,0),coordinate (0,1),global index:  0 val:  2
+thread_id (1,0),block_id (0,0),coordinate (0,1),global index:  1 val:  2
+thread_id (2,0),block_id (0,0),coordinate (0,1),global index:  2 val:  2
+thread_id (3,0),block_id (0,0),coordinate (0,1),global index:  3 val:  2
+thread_id (0,1),block_id (0,1),coordinate (0,1),global index:  0 val:  3
+thread_id (1,1),block_id (0,1),coordinate (0,1),global index:  1 val:  3
+thread_id (2,1),block_id (0,1),coordinate (0,1),global index:  2 val:  3
+thread_id (3,1),block_id (0,1),coordinate (0,1),global index:  3 val:  3
+thread_id (0,0),block_id (0,0),coordinate (1,2),global index:  4 val:  4
+thread_id (1,0),block_id (0,0),coordinate (1,2),global index:  5 val:  4
+thread_id (2,0),block_id (0,0),coordinate (1,2),global index:  6 val:  4
+thread_id (3,0),block_id (0,0),coordinate (1,2),global index:  7 val:  4
+thread_id (0,1),block_id (0,1),coordinate (1,2),global index:  4 val:  5
+thread_id (1,1),block_id (0,1),coordinate (1,2),global index:  5 val:  5
+thread_id (2,1),block_id (0,1),coordinate (1,2),global index:  6 val:  5
+thread_id (3,1),block_id (0,1),coordinate (1,2),global index:  7 val:  5
+thread_id (0,0),block_id (0,0),coordinate (1,0),global index:  4 val:  0
+thread_id (1,0),block_id (0,0),coordinate (1,0),global index:  5 val:  0
+thread_id (2,0),block_id (0,0),coordinate (1,0),global index:  6 val:  0
+thread_id (3,0),block_id (0,0),coordinate (1,0),global index:  7 val:  0
+thread_id (0,1),block_id (0,1),coordinate (1,0),global index:  4 val:  1
+thread_id (1,1),block_id (0,1),coordinate (1,0),global index:  5 val:  1
+thread_id (2,1),block_id (0,1),coordinate (1,0),global index:  6 val:  1
+thread_id (3,1),block_id (0,1),coordinate (1,0),global index:  7 val:  1
+thread_id (0,0),block_id (0,0),coordinate (0,2),global index:  0 val:  4
+thread_id (1,0),block_id (0,0),coordinate (0,2),global index:  1 val:  4
+thread_id (2,0),block_id (0,0),coordinate (0,2),global index:  2 val:  4
+thread_id (3,0),block_id (0,0),coordinate (0,2),global index:  3 val:  4
+thread_id (0,1),block_id (0,1),coordinate (0,2),global index:  0 val:  5
+thread_id (1,1),block_id (0,1),coordinate (0,2),global index:  1 val:  5
+thread_id (2,1),block_id (0,1),coordinate (0,2),global index:  2 val:  5
+thread_id (3,1),block_id (0,1),coordinate (0,2),global index:  3 val:  5
+thread_id (0,0),block_id (0,0),coordinate (0,0),global index:  0 val:  0
+thread_id (1,0),block_id (0,0),coordinate (0,0),global index:  1 val:  0
+thread_id (2,0),block_id (0,0),coordinate (0,0),global index:  2 val:  0
+thread_id (3,0),block_id (0,0),coordinate (0,0),global index:  3 val:  0
+thread_id (0,1),block_id (0,1),coordinate (0,0),global index:  0 val:  1
+thread_id (1,1),block_id (0,1),coordinate (0,0),global index:  1 val:  1
+thread_id (2,1),block_id (0,1),coordinate (0,0),global index:  2 val:  1
+thread_id (3,1),block_id (0,1),coordinate (0,0),global index:  3 val:  1
+thread_id (0,0),block_id (0,0),coordinate (1,1),global index:  4 val:  2
+thread_id (1,0),block_id (0,0),coordinate (1,1),global index:  5 val:  2
+thread_id (2,0),block_id (0,0),coordinate (1,1),global index:  6 val:  2
+thread_id (3,0),block_id (0,0),coordinate (1,1),global index:  7 val:  2
+thread_id (0,1),block_id (0,1),coordinate (1,1),global index:  4 val:  3
+thread_id (1,1),block_id (0,1),coordinate (1,1),global index:  5 val:  3
+thread_id (2,1),block_id (0,1),coordinate (1,1),global index:  6 val:  3
+thread_id (3,1),block_id (0,1),coordinate (1,1),global index:  7 val:  3
