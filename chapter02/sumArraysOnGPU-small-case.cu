@@ -1,38 +1,8 @@
 #include "../common/common.h"
+#include "../common/device_kernels.cuh"
 #include <cuda_runtime.h>
+
 #include <stdio.h>
-
-/*
- * This example demonstrates a simple vector sum on the GPU and on the host.
- * sumArraysOnGPU splits the work of the vector sum across CUDA threads on the
- * GPU. Only a single thread block is used in this small case, for simplicity.
- * sumArraysOnHost sequentially iterates through vector elements on the host.
- */
-
-void initialData(float *ip, int size) {
-    // generate different seed for random number
-    time_t t;
-    srand((unsigned)time(&t));
-
-    for (int i = 0; i < size; i++) {
-        ip[i] = (float)(rand() & 0xFF) / 10.0f;
-    }
-
-    return;
-}
-
-void sumArraysOnHost(float *A, float *B, float *C, const int N) {
-    for (int idx = 0; idx < N; idx++)
-        C[idx] = A[idx] + B[idx];
-}
-
-__global__ void sumArraysOnGPU(float *A, float *B, float *C, const int N) {
-    int i = threadIdx.x;
-
-    if (i < N)
-        C[i] = A[i] + B[i];
-}
-
 int main(int argc, char **argv) {
     printf("%s Starting...\n", argv[0]);
 

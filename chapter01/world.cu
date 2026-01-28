@@ -1,12 +1,7 @@
-#include<stdio.h>
-__global__ void hello(void)
-{
-    printf("hello world\n");
-}
-int main()
-{
-    hello<<<2,10>>>();
-//    cudaDeviceReset();
+#include "../common/device_kernels.cuh"
+int main() {
+    hello<<<2, 10>>>();
+    //    cudaDeviceReset();
     cudaDeviceSynchronize();
     return 0;
 }

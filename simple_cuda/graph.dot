@@ -1,0 +1,56 @@
+digraph dot {
+subgraph cluster_1 {
+label="graph_1" graph[style="dashed"];
+"graph_1_node_0"[style="solid" shape="record" label="{
+MEMCPY
+| {{ID | node handle} | {0 (topoId: 6) | 0x000055A6D629BA90}}
+| {kind | HtoD (HOST PINNED to DEVICE)}
+| {{srcPtr | dstPtr} | {pitch | ptr | xsize | ysize | pitch | ptr | xsize | ysize} | {67108864 | 0x00007FF6C8000000 | 0 | 1 | 67108864 | 0x00007FF6C4000000 | 0 | 1}}
+| {{srcPos | {{x | 0} | {y | 0} | {z | 0}}} | {dstPos | {{x | 0} | {y | 0} | {z | 0}}} | {Extent | {{Width | 67108864} | {Height | 1} | {Depth | 1}}}}
+}"];
+
+"graph_1_node_1"[style="solid" style="solid" shape="record" label="{MEMSET
+| {{ID | node handle | dptr | pitch | value | elementSize | width | height} | {1 (topoId: 5) | 0x000055A6D629C1F8 | 0x00007FF6DD400000 | 0 | 0 | 4 | 1024 | 1}}}"];
+
+"graph_1_node_2"[style="bold" shape="record" label="{KERNEL
+| {ID | 2 (topoId: 3) | _Z6reducePfPdmm\<\<\<512,512,0\>\>\>}
+| {{node handle | func handle} | {0x000055A6D629C960 | 0x000055A6D62EF880}}
+| {accessPolicyWindow | {base_ptr | num_bytes | hitRatio | hitProp | missProp} | {0x0000000000000000 | 0 | 0.000000 | N | N}}
+| {cooperative | 0}
+| {priority | 0}
+}"];
+
+"graph_1_node_3"[style="solid" style="solid" shape="record" label="{MEMSET
+| {{ID | node handle | dptr | pitch | value | elementSize | width | height} | {3 (topoId: 4) | 0x000055A6D629D0C8 | 0x00007FF6DD401000 | 0 | 0 | 4 | 2 | 1}}}"];
+
+"graph_1_node_4"[style="bold" shape="record" label="{KERNEL
+| {ID | 4 (topoId: 2) | _Z11reduceFinalPdS_m\<\<\<1,512,0\>\>\>}
+| {{node handle | func handle} | {0x000055A6D629D830 | 0x000055A6D62E7300}}
+| {accessPolicyWindow | {base_ptr | num_bytes | hitRatio | hitProp | missProp} | {0x0000000000000000 | 0 | 0.000000 | N | N}}
+| {cooperative | 0}
+| {priority | 0}
+}"];
+
+"graph_1_node_5"[style="solid" shape="record" label="{
+MEMCPY
+| {{ID | node handle} | {5 (topoId: 1) | 0x000055A6D629DF98}}
+| {kind | DtoH (DEVICE to HOST PAGEABLE)}
+| {{srcPtr | dstPtr} | {pitch | ptr | xsize | ysize | pitch | ptr | xsize | ysize} | {8 | 0x00007FF6DD401000 | 0 | 1 | 8 | 0x00007FFFFACE57B8 | 0 | 1}}
+| {{srcPos | {{x | 0} | {y | 0} | {z | 0}}} | {dstPos | {{x | 0} | {y | 0} | {z | 0}}} | {Extent | {{Width | 8} | {Height | 1} | {Depth | 1}}}}
+}"];
+
+"graph_1_node_6"[style="solid" shape="rectangle" label="6 (topoId: 0)
+HOST
+node handle: 0x000055A6D629E700
+fn: 0x000055A6D5390361
+userData: 0x00007FFFFACE5800
+"];
+
+"graph_1_node_0" -> "graph_1_node_2" [headlabel=1];
+"graph_1_node_1" -> "graph_1_node_2" [headlabel=0];
+"graph_1_node_2" -> "graph_1_node_4" [headlabel=0];
+"graph_1_node_3" -> "graph_1_node_4" [headlabel=1];
+"graph_1_node_4" -> "graph_1_node_5" [headlabel=0];
+"graph_1_node_5" -> "graph_1_node_6" [headlabel=0];
+}
+}

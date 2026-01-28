@@ -1,24 +1,9 @@
 #include "../common/common.h"
+#include "../common/device_kernels.cuh"
 #include <cuda_runtime.h>
 #include <stdio.h>
 
-/*
- * Display the dimensionality of a thread block and grid from the host and
- * device.
- */
-
-__global__ void checkIndex(void)
-{
-    printf("threadIdx:(%d, %d, %d)\n", threadIdx.x, threadIdx.y, threadIdx.z);
-    printf("blockIdx:(%d, %d, %d)\n", blockIdx.x, blockIdx.y, blockIdx.z);
-
-    printf("blockDim:(%d, %d, %d)\n", blockDim.x, blockDim.y, blockDim.z);
-    printf("gridDim:(%d, %d, %d)\n", gridDim.x, gridDim.y, gridDim.z);
-
-}
-
-int main(int argc, char **argv)
-{
+int main(int argc, char **argv) {
     // define total data element
     int nElem = 6;
 
@@ -36,5 +21,5 @@ int main(int argc, char **argv)
     // reset device before you leave
     CHECK(cudaDeviceReset());
 
-    return(0);
+    return (0);
 }

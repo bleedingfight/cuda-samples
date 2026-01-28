@@ -132,3 +132,55 @@ template <typename T> void printData(T *in, const int size) {
     printf("\n");
     return;
 }
+/*
+ * This example helps to visualize the relationship between thread/block IDs and
+ * offsets into data. For each CUDA thread, this example displays the
+ * intra-block thread ID, the inter-block block ID, the global coordinate of a
+ * thread, the calculated offset into input data, and the input data at that
+ * offset.
+ */
+
+void printMatrix(int *C, const int nx, const int ny) {
+    int *ic = C;
+    printf("\nMatrix: (%d.%d)\n", nx, ny);
+
+    for (int iy = 0; iy < ny; iy++) {
+        for (int ix = 0; ix < nx; ix++) {
+            printf("%3d", ic[ix]);
+        }
+        ic += nx;
+        printf("\n");
+    }
+
+    printf("\n");
+    return;
+}
+void initData(float *data, const int size) {
+    for (int i = 0; i < size; i++) {
+        data[i] = (float)(rand() & 0xFF) / 100.0f;
+    }
+}
+
+/*
+ * This example demonstrates a simple vector sum on the GPU and on the host.
+ * sumArraysOnGPU splits the work of the vector sum across CUDA threads on the
+ * GPU. Only a single thread block is used in this small case, for simplicity.
+ * sumArraysOnHost sequentially iterates through vector elements on the host.
+ */
+
+void initialData(float *ip, int size) {
+    // generate different seed for random number
+    time_t t;
+    srand((unsigned)time(&t));
+
+    for (int i = 0; i < size; i++) {
+        ip[i] = (float)(rand() & 0xFF) / 10.0f;
+    }
+
+    return;
+}
+
+void sumArraysOnHost(float *A, float *B, float *C, const int N) {
+    for (int idx = 0; idx < N; idx++)
+        C[idx] = A[idx] + B[idx];
+}
